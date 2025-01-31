@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineForum - Foro de Películas</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        img { max-width: 200px; }
+        .container { max-width: 600px; margin: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CineForum</h1>
+        <img src="https://via.placeholder.com/150" alt="Logo CineForum">  
+        <p>Foro de películas donde puedes compartir opiniones y descubrir nuevas recomendaciones.</p>
+
+        <h2>Funcionalidades</h2>
+        <ul>
+            <li>📌 Publica y comenta sobre películas</li>
+            <li>⭐ Guarda tus películas favoritas</li>
+            <li>🔍 Descubre tendencias</li>
+        </ul>
+
+        <h2>Descarga la app</h2>
+        {% if is_mobile %}
+            <a href="https://tu-link-de-apk.com" download>📥 Descargar APK</a>
+        {% else %}
+            <p>Escanea este QR para descargar la APK:</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://tu-link-de-apk.com" alt="QR de descarga">
+        {% endif %}
+    </div>
+</body>
+</html>
