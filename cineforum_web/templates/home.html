@@ -7,19 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineForum - Foro de Películas</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
-    <style>
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
-    </style>
 </head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+
+    img {
+        max-width: 200px;
+    }
+
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
 
 <body>
     <div class="container">
         <h1>CineForum</h1>
-        <img src="static/img/Logocine.jpg" alt="Logo CineForum">
+        <img src="{% static 'img/Logocine.jpg' %}" alt="Logo CineForum">
         <p>Foro de películas donde puedes compartir opiniones y descubrir nuevas recomendaciones.</p>
 
         <h2>Funcionalidades</h2>
