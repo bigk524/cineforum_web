@@ -10,41 +10,116 @@
 </head>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 20px;
-    }
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo oscuro */
+    color: white; /* Texto blanco para contraste */
+}
 
-    img {
-        max-width: 200px;
-    }
+/* Contenedor principal */
+.container {
+    max-width: auto;
+    margin: auto;
+    background: #0989a0; /* Color de fondo del contenedor */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
 
-    .container {
-        text-align: center;
-        margin-top: 50px;
-    }
+/* Logo */
+.logo {
+    max-width: 200px;
+}
+
+/* Capturas de pantalla */
+.screenshots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.screenshots img {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Botón de descarga */
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: #ff5722; /* Naranja vibrante */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background: #e64a19; /* Cambio de color al pasar el mouse */
+}
+
+/* Código QR */
+.qr-code {
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+/* Lista de funcionalidades */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #444;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    color: white;
+}
+
+
+
+
+
 </style>
 
 <body>
     <div class="container">
         <h1>CineForum</h1>
-        <img src="{% static 'img/Logocine.jpg' %}" alt="Logo CineForum">
+        <img class="logo" src="{% static 'img/Logocine.jpg' %}" alt="Logo CineForum">
         <p>Foro de películas donde puedes compartir opiniones y descubrir nuevas recomendaciones.</p>
 
         <h2>Funcionalidades</h2>
         <ul>
-            <li>📌 Publica y comenta sobre películas</li>
+            <li>📌 Califica y comenta sobre películas</li>
             <li>⭐ Tus películas favoritas en un solo lugar</li>
             <li>🔍 Descubre tendencias</li>
         </ul>
 
+        <h2>Capturas de pantalla</h2>
+        <div class="screenshots">
+            <img src="{% static 'img/pantalla_inicio.jpeg' %}" alt="Captura 1">
+            <img src="{% static 'img/peli.jpeg' %}" alt="Captura 2">
+            <img src="{% static 'img/nosotros.jpeg' %}" alt="Captura 3">
+            <img src="{% static 'img/comentarios.jpeg' %}" alt="Captura 4">
+        </div>
+
         <h2>Descarga la app</h2>
         {% if is_mobile %}
-        <a href="https://tu-link-de-apk.com" download>📥 Descargar APK</a>
+        <a class="download-btn" href="https://tu-link-de-apk.com" download>📥 Descargar APK</a>
         {% else %}
         <p>Escanea este QR para descargar la APK:</p>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://tu-link-de-apk.com"
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://tu-link-de-apk.com"
             alt="QR de descarga">
         {% endif %}
     </div>
